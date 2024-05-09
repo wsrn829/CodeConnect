@@ -1,4 +1,4 @@
-"""project4 URL Configuration
+"""codeconnect URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -18,5 +18,10 @@ from django.urls import include, path
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", include("network.urls")),
+    path("network/", include("network.urls")),
+    path("projects/", include("projects.urls")),
+    path("todo/", include("todo.urls")),
+    path("profiles/", include("profiles.urls")),
+    path("messages/", include("messages.urls")),
+    path("accounts/", include("accounts.urls")),
 ]
