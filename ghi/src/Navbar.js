@@ -27,7 +27,7 @@ function NavbarComponent() {
   return (
       <Navbar collapseOnSelect expand="lg" variant="light" style={{ backgroundColor: '#008B8B', color: 'white' }}>
       <Container fluid>
-        <Navbar.Brand as={Link} to="/">WHEELWORLD</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">CODECONNECT</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">

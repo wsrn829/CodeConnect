@@ -14,7 +14,7 @@ function Login() {
 
     try {
       // Perform login operation here (e.g., API call)
-      const response = await fetch('http://localhost:8000/api/login', {
+      const response = await fetch('http://localhost:8000/accounts/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
