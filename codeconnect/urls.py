@@ -20,8 +20,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("network/", include("network.urls")),
     path("projects/", include("projects.urls")),
-    path("todo/", include("todo.urls")),
     path("profiles/", include("profiles.urls")),
-    path("messages/", include("messages.urls")),
+    path("messaging/", include("messaging.urls")),
     path("accounts/", include("accounts.urls")),
 ]

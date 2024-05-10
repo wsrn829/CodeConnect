@@ -35,14 +35,14 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'projects',
     'profiles',
-    'messages',
+    'messaging',
     'accounts',
     'network',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sessions',
     'django.contrib.staticfiles',
 ]
 
@@ -56,7 +56,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-AUTH_USER_MODEL = 'network.User'
+AUTH_USER_MODEL = 'accounts.User'
 ROOT_URLCONF = 'codeconnect.urls'
 
 TEMPLATES = [
@@ -88,7 +88,6 @@ DATABASES = {
     }
 }
 
-AUTH_USER_MODEL = "network.User"
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
