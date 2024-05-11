@@ -4,6 +4,7 @@ from django.db import IntegrityError
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.authtoken.models import Token
 
 @api_view(['POST'])
 def login_view(request):
@@ -13,7 +14,10 @@ def login_view(request):
 
     if user is not None:
         login(request, user)
-        return Response({"message": "Login successful"}, status=status.HTTP_200_OK)
+        token, _ = Token.objects.get_or_create(user=user)
+        print(f'Token for user {user.username}: {token.key}')
+        return Response({"token": token.key}, status=status.HTTP_200_OK)
+        print(f'Token for user {user.username}: {token.key}')
     else:
         return Response({"message": "Invalid username and/or password."}, status=status.HTTP_400_BAD_REQUEST)
 
@@ -26,7 +30,7 @@ def logout_view(request):
 def register(request):
     if request.method == 'GET':
         return Response({'message': 'Only POST requests are allowed.'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
-    if request.method == "POST":
+    elif request.method == "POST":
         username = request.data.get("username")
         email = request.data.get("email")
         password = request.data.get("password")
@@ -39,7 +43,9 @@ def register(request):
         try:
             user = User.objects.create_user(username, email, password)
             user.save()
+            token, _ = Token.objects.get_or_create(user=user)
+            print(f'Token for user {user.username}: {token.key}')
         except IntegrityError:
             return Response({"message": "Username already taken."}, status=status.HTTP_400_BAD_REQUEST)
 
-        return Response({"message": "User created successfully."}, status=status.HTTP_201_CREATED)
+        return Response({"token": token.key}, status=status.HTTP_201_CREATED)

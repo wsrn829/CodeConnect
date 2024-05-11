@@ -27,11 +27,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-CORS_ALLOW_ALL_ORIGINS = True
-
-ALLOWED_HOSTS = [
-]
-
 
 # Application definition
 
@@ -42,6 +37,7 @@ INSTALLED_APPS = [
     'messaging',
     'accounts',
     'network',
+    'rest_framework.authtoken',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -60,6 +56,19 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
+CORS_ALLOW_ALL_ORIGINS = False
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://localhost:3001",
+    "http://localhost:3002",
+]
+
+ALLOWED_HOSTS = [
+]
+
 
 AUTH_USER_MODEL = 'accounts.User'
 ROOT_URLCONF = 'codeconnect.urls'
@@ -131,3 +140,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    # Other REST framework settings...
+}

@@ -34,8 +34,12 @@ function Register({ onRegister }) {
       });
 
       if (response.ok) {
-        // If registration is successful, redirect to login page
-        handleLogin(username);
+        const data = await response.json(); // Parse the response to JSON
+        const token = data.token; // Extract the token
+
+        // Call handleLogin with the username and token
+        handleLogin(username, token);
+
         navigate('/login');
       } else {
         throw new Error('Registration failed');

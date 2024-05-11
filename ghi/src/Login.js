@@ -6,8 +6,7 @@ function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-  const { handleLogin } = useContext(AuthContext); // Get handleLogin from the AuthContext
-
+  const { handleLogin, setToken } = useContext(AuthContext); // Get handleLogin and setToken from the AuthContext
 
   const handleLoginClick = async (event) => {
     event.preventDefault(); // Prevent form from causing a page refresh
@@ -26,8 +25,11 @@ function Login() {
       });
 
       if (response.ok) {
-        // If login is successful, redirect to home page
-        handleLogin(username);
+        const data = await response.json(); // Parse the response to JSON
+        console.log("data", data);
+        console.log("token", data.token);
+        setToken(data.token); // Save the token to the context state
+        handleLogin(username, data.token);
         navigate('/');
       } else {
         throw new Error('Login failed');
