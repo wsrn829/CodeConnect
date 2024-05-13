@@ -1,7 +1,6 @@
 # CodeConnect
-#### Video Demo:  https://youtu.be/CAnuI00jcZw
 #### Description:
-CodeConnect is the brainchild of Sarina Wu, developed as her solo project for CS50X2024 Final Project. It is a comprehensive full-stack social application designed to connect individuals with similar interests, particularly those passionate about writing and coding, through posts and projects. Leveraging a combination of Django REST framework, Django ORM, Python, and SQLite3 for the backend API and database, and React with React hooks and JavaScript for the frontend, CodeConnect offers a seamless platform for users to connect, share ideas, and have fun.
+CodeConnect is Sarina Wu's solo work for CS50X2024 Final Project. It is a comprehensive full-stack social application designed to connect individuals with similar interests, particularly those passionate about writing and coding, through posts and projects. Leveraging a combination of Django REST framework, Django ORM, Python, and SQLite3 for the backend API and database, and React with React hooks and JavaScript for the frontend, CodeConnect offers a seamless platform for users to connect, share ideas, and have fun.
 
 The development process involved building the application from scratch, ensuring a robust architecture capable of handling various functionalities efficiently. Django token-based authentication was implemented for backend authentication, providing secure access to user accounts, while a custom frontend authentication system was developed using React and React useContext hook, enhancing user experience and security.
 
@@ -31,7 +30,7 @@ To run CodeConnect locally, follow these steps:
 - In a new terminal, navigate to the frontend directory: cd ghi
 - Install Node.js dependencies: npm install
 - Start the React development server: npm start
-  
+
 Following these steps will launch the Django backend at http://localhost:8000/ and the React frontend at http://localhost:3000/.
 
 Replace <repository_url> and <project_directory> with the actual URL of your GitHub repository and the name of your project directory, respectively.
