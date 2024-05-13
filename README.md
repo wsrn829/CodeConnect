@@ -1,10 +1,22 @@
 # CodeConnect
 #### Description:
-CodeConnect is Sarina Wu's solo work for CS50X2024 Final Project. It is a comprehensive full-stack social application designed to connect individuals with similar interests, particularly those passionate about writing and coding, through posts and projects. Leveraging a combination of Django REST framework, Django ORM, Python, and SQLite3 for the backend API and database, and React with React hooks and JavaScript for the frontend, CodeConnect offers a seamless platform for users to connect, share ideas, and have fun.
+CodeConnect is Sarina Wu's solo work for CS50X2024 Final Project. I designed and developed this application entirely from scratch.
 
-The development process involved building the application from scratch, ensuring a robust architecture capable of handling various functionalities efficiently. Django token-based authentication was implemented for backend authentication, providing secure access to user accounts, while a custom frontend authentication system was developed using React and React useContext hook, enhancing user experience and security.
+This is a comprehensive full-stack social application designed to connect individuals with similar interests, particularly those passionate about writing and coding, through posts and projects.
 
-Django ORM and migrations were employed to facilitate efficient management of the database, ensuring seamless interaction with the application's data. Bootstrap and CSS were utilized for styling, ensuring a visually appealing and user-friendly interface. The incorporation of these technologies enabled CodeConnect to offer a polished and professional look while maintaining responsiveness across different devices and screen sizes.
+Leveraging a combination of Django REST framework, Django ORM, Python, and SQLite3 for the backend API and database, and React with React hooks and JavaScript for the frontend, CodeConnect serves as a platform for users to connect, share ideas, and have fun.
+
+------------------------------------------
+
+- It incorporates several key functionalities, including Django token-based authentication for secure backend access to user accounts.
+
+- I also implemented a custom frontend authentication system using React with React hooks and JavaScript to enhance both user experience and security measures.
+
+- I also engineered lists of followed users and followers using advanced filtering techniques in Python syntax, eliminating the need for additional database tables, to optimize performance and minimize database complexity.
+
+- Django ORM and migrations were employed to facilitate efficient management of the database, ensuring seamless interaction with the application's data. Bootstrap and CSS were utilized for styling, ensuring a visually appealing and user-friendly interface. The incorporation of these technologies enabled CodeConnect to offer a polished and professional look while maintaining responsiveness across different devices and screen sizes.
+
+--------------------------------------------
 
 Key features of CodeConnect include:
 
@@ -19,6 +31,8 @@ Key features of CodeConnect include:
 - Unfollow Other Users: Users have the flexibility to unfollow other users at any time, ensuring control over their network and connections.
 - List of Following Users: CodeConnect offers a comprehensive list of users that a user is following, providing visibility into their network and connections.
 - List of Followers: Users can view a list of individuals who are following them, fostering engagement and interaction within the community.
+
+-------------------------------------------------
 
 To run CodeConnect locally, follow these steps:
 
