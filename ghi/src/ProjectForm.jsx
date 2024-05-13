@@ -48,7 +48,7 @@ const ProjectForm = () => {
   };
 
   const handleGoToProjects = () => {
-    navigate('/projects'); // replace with your projects list route
+    navigate('/projects');
   };
 
   return (

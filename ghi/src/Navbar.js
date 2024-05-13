@@ -34,8 +34,9 @@ function NavbarComponent() {
             <Nav.Link as={Link} to="/">HOME</Nav.Link>
             <Nav.Link as={Link} to={`/profile/${username}/`}>PROFILE</Nav.Link>
             <Nav.Link as={Link} to="/posts">POSTS</Nav.Link>
-            <Nav.Link as={Link} to="/projects/create">PROJECTS</Nav.Link>
-            <Nav.Link as={Link} to="/messages">MESSAGES</Nav.Link>
+            <Nav.Link as={Link} to="/projects">PROJECTS</Nav.Link>
+            <Nav.Link as={Link} to="/followlists">FOLLOWING</Nav.Link>
+            {/* <Nav.Link as={Link} to="/messages">MESSAGES</Nav.Link> */}
           </Nav>
           <Navbar.Text className="navbar-text" style={{
               color: 'yellow',

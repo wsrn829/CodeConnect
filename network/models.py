@@ -13,7 +13,7 @@ class Post(models.Model):
         ordering = ['-created_at']
 
 class Follow(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='follows')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='followING')
     follower = models.ForeignKey(User, on_delete=models.CASCADE, related_name='followers')
 
 class FriendRequest(models.Model):

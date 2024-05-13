@@ -6,6 +6,8 @@ import Navbar from "./Navbar";
 import Login from "./Login";
 import Logout from "./Logout";
 import Register from "./Register";
+import PostForm from "./PostForm";
+import PostList from "./PostList";
 import MessageList from "./MessageList";
 import MessageForm from "./MessageForm";
 import MessageItem from "./MessageItem";
@@ -19,6 +21,7 @@ import ProfileUpdate from "./ProfileUpdate";
 import ProjectForm from "./ProjectForm";
 import ProjectList from "./ProjectList";
 import ProjectItem from "./ProjectItem";
+import FollowLists from "./FollowLists";
 import './App.css';
 
 function App() {
@@ -36,7 +39,9 @@ function App() {
             <Route path="/messages/create" element={<MessageForm />} />
             <Route path="/messages/:id" element={<MessageItem />} />
             <Route path="/messagepage" element={<MessagePage />} />
-            <Route path="/following" element={<FollowingList />} />
+            <Route path="/followlists" element={<FollowLists />} />
+            <Route path="/posts/create" element={<PostForm />} />
+            <Route path="/posts" element={<PostList />} />
             <Route path="/profile/create" element={<ProfileForm />} />
             <Route path="/profile/:username" element={<ProfilePage />} />
             <Route path="/profile/:username/update" element={<ProfileUpdate />} />

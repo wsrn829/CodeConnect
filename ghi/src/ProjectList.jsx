@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react';
 import AuthContext from './AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const ProjectList = () => {
   const { isLoggedIn, username, token } = useContext(AuthContext);
   const [projects, setProjects] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -33,21 +35,28 @@ const ProjectList = () => {
     fetchProjects();
   }, [isLoggedIn, username, token]);
 
+  const handleCreateProject = () => {
+    navigate('/projects/create');
+};
+
   return (
     <div className="container">
-    <h2 className="mt-5">Projects</h2>
-    {projects.map((project, index) => (
-      <div key={index} className="card mt-3">
-        <div className="card-body">
-          <h3 className="card-title">Name: {project.name}</h3>
-          <p className="card-text">Description: {project.description}</p>
-          <p className="card-text">Start Date: {project.start_date}</p>
-          <p className="card-text">End Date: {project.end_date}</p>
-          <p className="card-text">Owner: {username}</p>
-        </div>
-      </div>
-      ))}
+    <div className="d-flex justify-content-end mb-3">
+        <button onClick={handleCreateProject} className="btn btn-primary">Create Project</button>
     </div>
+    <h2 className="mt-3">Projects</h2>
+    {projects.map((project, index) => (
+        <div key={index} className="card mt-3 bg-light">
+            <div className="card-body">
+                <h3 className="card-title text-dark">Name: {project.name}</h3>
+                <p className="card-text text-dark">Description: {project.description}</p>
+                <p className="card-text text-dark">Start Date: {project.start_date}</p>
+                <p className="card-text text-dark">End Date: {project.end_date}</p>
+                <p className="card-text text-dark">Owner: {username}</p>
+            </div>
+        </div>
+    ))}
+</div>
   );
 };
 
